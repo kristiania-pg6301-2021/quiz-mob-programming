@@ -55,11 +55,23 @@ const quizzes = [
 ];
 
 
+
+
 function Quiz() {
+    
+    function handleClick(answerIndex) {
+        if(answerIndex === quiz.indexOfRightAnswer) {
+            alert("Correct answer");
+        } else {
+            alert("Wrong answer");
+        }
+        
+    }
+    
     const quiz = quizzes[0];
     return <>
     <h1>{quiz.question}</h1>
-        {quiz.answers.map(a => <button>{a}</button>)}
+        {quiz.answers.map((a, index) => <button onClick={() => handleClick(index)}>{a}</button>)}
     </>
 }
 
