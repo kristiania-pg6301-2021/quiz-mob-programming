@@ -1,0 +1,23 @@
+{
+  "name": "quiz-mob-programming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "parcel": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristiania-pg6301-2021/quiz-mob-programming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kristiania-pg6301-2021/quiz-mob-programming/issues"
+  },
+  "homepage": "https://github.com/kristiania-pg6301-2021/quiz-mob-programming#readme",
+  "devDependencies": {
+    "parcel": "^1.12.3"
+  }
+}
