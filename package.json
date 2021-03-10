@@ -19,5 +19,9 @@
   "homepage": "https://github.com/kristiania-pg6301-2021/quiz-mob-programming#readme",
   "devDependencies": {
     "parcel": "^1.12.3"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
