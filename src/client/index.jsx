@@ -1,9 +1,10 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import ReactDOM from 'react-dom'
 import {getQuiz} from "./getQuiz";
 
 
 function Quiz() {
+    const [quiz, setQuiz] = useState()
     useEffect(async () => {
         const res = await fetch("/api/question");
         if (!res.ok) {
@@ -11,9 +12,12 @@ function Quiz() {
         }
 
         const question = await res.json()
+
         console.log(question)
 
-    })
+        setQuiz(question)
+    }, [])
+
     function handleClick(answerIndex) {
         if(answerIndex === quiz.indexOfRightAnswer) {
             alert("Correct answer");
@@ -23,10 +27,12 @@ function Quiz() {
         
     }
     
-    const quiz = getQuiz();
+    if(!quiz){
+        return <div>Loading...</div>
+    }
     return <>
     <h1>{quiz.question}</h1>
-        {quiz.answers.map((a, index) => <button onClick={() => handleClick(index)}>{a}</button>)}
+        {quiz.answers.map((a, index) => <button onClick={() => handleClick(index)} key={index}>{a}</button>)}
     </>
 }
 
