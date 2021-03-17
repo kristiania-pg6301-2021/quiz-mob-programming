@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "parcel": "parcel src/client/index.html",
-    "server": "node src/server/server.js"
+    "server": "node src/server/server.js",
+    "format": "prettier --write src"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
   },
   "homepage": "https://github.com/kristiania-pg6301-2021/quiz-mob-programming#readme",
   "devDependencies": {
-    "parcel": "^1.12.3"
+    "parcel": "^1.12.3",
+    "prettier": "^2.2.1"
   },
   "dependencies": {
     "express": "^4.17.1",
