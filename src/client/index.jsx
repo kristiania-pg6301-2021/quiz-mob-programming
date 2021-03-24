@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { getQuiz } from "./getQuiz";
+
 
 function Quiz() {
   const [quiz, setQuiz] = useState();

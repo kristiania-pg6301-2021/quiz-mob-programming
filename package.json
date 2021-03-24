@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "parcel": "parcel src/client/index.html",
-    "server": "node src/server/server.js",
-    "format": "prettier --write src"
+    "server": "nodemon --watch src/server src/server/server.js",
+    "format": "prettier --write src",
+    "start": "concurrently \"npm run server\" \"npm run parcel\""
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,12 @@
   },
   "homepage": "https://github.com/kristiania-pg6301-2021/quiz-mob-programming#readme",
   "devDependencies": {
+    "nodemon": "^2.0.7",
     "parcel": "^1.12.3",
     "prettier": "^2.2.1"
   },
   "dependencies": {
+    "concurrently": "^6.0.0",
     "express": "^4.17.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
