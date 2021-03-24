@@ -1,11 +1,10 @@
 const { getQuiz } = require("./getQuiz");
 
-console.log("hello world");
-
 const express = require("express");
 const path = require("path");
 
 const app = express();
+require("./auth/authRoutes")(app)
 
 app.use(express.static(path.resolve(__dirname, "..", "..", "dist")));
 

@@ -4,6 +4,9 @@ import ReactDOM from "react-dom";
 
 function Quiz() {
   const [quiz, setQuiz] = useState();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   useEffect(async () => {
     const res = await fetch("/api/question");
     if (!res.ok) {
@@ -36,6 +39,11 @@ function Quiz() {
           {a}
         </button>
       ))}
+
+      <div>
+        <input type="text" id="username" placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
+        <input type="password" id="password" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+      </div>
     </>
   );
 }
