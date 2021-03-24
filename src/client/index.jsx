@@ -28,6 +28,28 @@ function Quiz() {
     }
   }
 
+  async function doLogin(){
+    let response
+
+    try{
+      response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({username, password}) 
+      })
+      if(response.status === 204){
+        console.log("We're signed in")
+      }
+    }catch(e){
+      console.log("Something went wrong", e)
+    }
+
+    setPassword("")
+    setUsername("")
+  }
+
   if (!quiz) {
     return <div>Loading...</div>;
   }
@@ -43,6 +65,7 @@ function Quiz() {
       <div>
         <input type="text" id="username" placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
         <input type="password" id="password" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+        <button onClick={doLogin}>Log in</button>
       </div>
     </>
   );
